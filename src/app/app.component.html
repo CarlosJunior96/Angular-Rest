@@ -3,13 +3,23 @@
   <form>
     <div class="form-group">
       <label for="login">Usuario:</label>
-      <input type="email" class="form-control" [(ngModel)]="usuario.login" id="login" name="login" placeholder="Informe o Usuario">
+      <!-- # no Angular significa que é um campo de referência que pode ser usado como chamada por outras tags não pode ser igual a nenhuma variável definida na class ou método -->
+      <input type="email" class="form-control" #email="ngModel" [(ngModel)]="usuario.login" id="login" name="login" placeholder="Informe o Usuario" required="required">
+      <div *ngIf="email.invalid" class="alert alert-danger">
+        Informe o Usuário!
+      </div>
     </div>
+
     <div class="form-group">
       <label for="senha">Senha:</label>
-      <input type="password" class="form-control" [(ngModel)]="usuario.senha" id="senha" name="senha" placeholder="Informe a Senha">
+      <input type="password" class="form-control" #senha="ngModel" [(ngModel)]="usuario.senha" id="senha" name="senha" placeholder="Informe a Senha" required="required">
+      <div *ngIf="senha.invalid" class="alert alert-danger">
+        Informe a senha!
+      </div>
     </div>
-    <button type="button" (click)="login()" class="btn btn-primary btn-block">Acessar</button>
+
+    <!-- desabilitando o botão caso os campos estejam vazios -->
+    <button type="button" [disabled]="email.invalid || senha.invalid" (click)="login()" class="btn btn-primary btn-block">Acessar</button>
   </form>
 </div>
 

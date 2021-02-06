@@ -1,0 +1,11 @@
+/** inicio - configurando cores para campos válidos e invalidos com angular **/
+
+.ng-valid[required], ng-valid.required{
+  border-left: 5px solid #42A948;
+}
+
+.ng-invalid:not(form){
+  border-left: 5px solid #A94442;
+}
+
+/** fim - configurando cores para campos válidos e invalidos com angular **/

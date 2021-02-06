@@ -22,18 +22,17 @@ export class LoginServiceService {
 
       /** método responsavel de trazer o retorno de dados da requisição HTTP **/
       .subscribe(data => {
-
         /** convertendo um token para o tipo JSON separado o BEARER do token gerado **/
         var token = JSON.parse(JSON.stringify(data)).Authorization.split(" ")[1];
 
         /** localStorage() tem a função de armazenar a sessão // esconder no frontend o TOKEN RECEBIDO DO SERVIDOR **/
         /** esse localStorage permite que o token não seja perdido quando a janela é fechada do navegador **/
         localStorage.setItem("token", token);
-
+        console.info("Teste" + localStorage.getItem("token"))
         console.log("Sucesso no Login!");
         },
         error => {
-          console.error("Erro ao fazer Login!!");
+          alert("Acesso Negado!!!")
         }
       )
   }
