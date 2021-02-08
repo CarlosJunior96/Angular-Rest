@@ -28,7 +28,7 @@ export class LoginServiceService {
         /** localStorage() tem a função de armazenar a sessão // esconder no frontend o TOKEN RECEBIDO DO SERVIDOR **/
         /** esse localStorage permite que o token não seja perdido quando a janela é fechada do navegador **/
         localStorage.setItem("token", token);
-        console.info("Teste" + localStorage.getItem("token"))
+        console.log(token);
         console.log("Sucesso no Login!");
         },
         error => {
