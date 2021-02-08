@@ -2,13 +2,17 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {AppConstants} from '../app-constants';
 
+/** importando classe responsável pelas rotas **/
+import {Router} from "@angular/router";
+
 @Injectable({
   providedIn: 'root'
 })
 export class LoginServiceService {
 
   constructor(
-    private http: HttpClient /** objeto criado responsável de fazer os acessos aos métodos HTTP **/
+    private http: HttpClient, /** objeto criado responsável de fazer os acessos aos métodos HTTP **/
+    private rotas: Router /** objeto que recebe as rotas **/
   ) { }
 
   login(usuario){
@@ -30,6 +34,7 @@ export class LoginServiceService {
         localStorage.setItem("token", token);
         console.log(token);
         console.log("Sucesso no Login!");
+        this.rotas.navigate(['home']);
         },
         error => {
           alert("Acesso Negado!!!")

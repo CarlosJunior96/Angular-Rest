@@ -7,6 +7,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import {RouterModule, Routes} from "@angular/router";
+import { LoginComponent } from './login/login.component';
 
 
 /** vetor criado que é responsável de receber os componentes que irão fazer as rotas entre as páginas **/
@@ -15,7 +16,7 @@ export const appRouters: Routes = [
 
   /** path contém a URL que será responsável de redirecionar para o component **/
   {path: 'home', component: HomeComponent},
-  {path: 'login', component: AppComponent}
+  {path: 'login', component: LoginComponent}
 
 ];
 
@@ -25,7 +26,8 @@ export const rotas: ModuleWithProviders<any> = RouterModule.forRoot(appRouters);
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
