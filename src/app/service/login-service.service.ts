@@ -17,7 +17,6 @@ export class LoginServiceService {
 
   login(usuario){
 
-
     console.info();
 
     /** fazendo post para a API no endereço HTTP **/
