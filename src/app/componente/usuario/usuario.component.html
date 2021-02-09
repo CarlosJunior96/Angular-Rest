@@ -1,0 +1,24 @@
+
+<div class="container mt-3">
+  <h4 class="mb-3">Usuários</h4>
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Login</th>
+      <th scope="col">CPF</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let usuario of usuarios;">
+      <td>{{usuario.id}}</td>
+      <td>{{usuario.nome}}</td>
+      <td>{{usuario.login}}</td>
+      <td>{{usuario.cpf}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+

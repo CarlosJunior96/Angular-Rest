@@ -5,17 +5,17 @@ export class AppConstants {
 
   /** método estático que retorna o url base da API **/
   public static get baseServidor(): string{
-    return "http://localhost:8080/";
+    return "http://localhost:8080/springrestapi";
   }
 
   /** método estático que retorna a url de login da API **/
   public static get baseLogin(): string{
-    return this.baseServidor + "springrestapi/login";
+    return this.baseServidor + "/login";
   }
 
   /** método estático que retorna a url de usuarios da API **/
   public static get baseUrlUsuarios(): string{
-    return this.baseServidor + "usuarios/";
+    return this.baseServidor + "/usuarios/";
   }
 
 }

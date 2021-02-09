@@ -10,16 +10,18 @@ import {RouterModule, Routes} from "@angular/router";
 import { LoginComponent } from './login/login.component';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {HttpInterceptorModule} from "./service/header-interceptor.service";
+import { UsuarioComponent } from './componente/usuario/usuario.component';
 
 
 /** vetor criado que é responsável de receber os componentes que irão fazer as rotas entre as páginas **/
 export const appRouters: Routes = [
   /** aqui será declarado todas as rotas **/
 
-  /** path contém a URL que será responsável de redirecionar para o component **/
+  /** path contém a URL que será responsável de redirecionar para os components **/
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
-  {path: '', component: LoginComponent}
+  {path: '', component: LoginComponent},
+  {path: 'usuarios', component: UsuarioComponent}
 ];
 
 /** declarando um vetor que recebe todas as rotas criadas **/
@@ -29,7 +31,8 @@ export const rotas: ModuleWithProviders<any> = RouterModule.forRoot(appRouters);
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,
